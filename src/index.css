@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0A0A0B;
+  --color-secondary: #C9A050;
+  --color-accent: #E5C384;
+  --color-surface: #141416;
+  --color-white: #FFFFFF;
+  --color-gray-soft: #F8F9FA;
+  --color-gray-muted: #6C757D;
+}
+
+:root {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Premium Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 11, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201, 160, 80, 0.1);
+}
+
+/* Buttons */
+.btn-premium {
+  padding: 1rem 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  transition: var(--transition-premium);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-secondary);
+  background: transparent;
+  color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.btn-premium:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  box-shadow: 0 15px 30px rgba(201, 160, 80, 0.2);
+}
+
+.btn-premium-solid {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.btn-premium-solid:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Text Gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F9F0D1 0%, #C9A050 50%, #8E6D2F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section Spacing */
+section {
+  padding: 10rem 0;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 6rem 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 10px;
+}
+
+/* Animations */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
