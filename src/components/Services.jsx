@@ -1,94 +1,72 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, RefreshCw, BarChart, Scale, ShieldCheck, Handshake, ChevronRight } from 'lucide-react';
+import { Home, RefreshCw, Layers, ShieldCheck } from 'lucide-react';
+
+const services = [
+  {
+    title: 'Financiamento Imobiliário',
+    desc: 'Assessoria completa na escolha do banco, análise de taxas e aprovação rápida para o seu novo imóvel.',
+    icon: <Home className="w-10 h-10 text-brand-gold" />,
+    delay: 0.1
+  },
+  {
+    title: 'Refinanciamento (Home Equity)',
+    desc: 'Transforme o seu imóvel em capital de giro com as menores taxas do mercado e prazos estendidos.',
+    icon: <RefreshCw className="w-10 h-10 text-brand-gold" />,
+    delay: 0.2
+  },
+  {
+    title: 'Consórcio Estratégico',
+    desc: 'A forma mais inteligente de planejar seu patrimônio sem pagar juros bancários abusivos.',
+    icon: <Layers className="w-10 h-10 text-brand-gold" />,
+    delay: 0.3
+  },
+  {
+    title: 'Crédito Estruturado',
+    desc: 'Soluções sob medida para perfis de alta renda e investimentos de grande porte.',
+    icon: <ShieldCheck className="w-10 h-10 text-brand-gold" />,
+    delay: 0.4
+  }
+];
 
 const Services = () => {
-  const services = [
-    {
-      icon: <Home size={32} />,
-      title: 'Financiamento Imobiliário',
-      description: 'Consultoria completa para aquisição patrimonial com as taxas mais competitivas do mercado.',
-    },
-    {
-      icon: <RefreshCw size={32} />,
-      title: 'Refinanciamento (CGI)',
-      description: 'Maximize o potencial do seu imóvel em capital estratégico para seus novos projetos.',
-    },
-    {
-      icon: <BarChart size={32} />,
-      title: 'Consórcio Imobiliário',
-      description: 'Construção inteligente de patrimônio de forma planejada, segura e sem incidência de juros.',
-    },
-    {
-      icon: <Scale size={32} />,
-      title: 'Portabilidade de Crédito',
-      description: 'Otimização de contratos vigentes, reduzindo custos financeiros e amortizando parcelas.',
-    },
-    {
-      icon: <ShieldCheck size={32} />,
-      title: 'Seguros e Garantias',
-      description: 'Proteção integral para sua família e para o patrimônio que você construiu com esforço.',
-    },
-    {
-      icon: <Handshake size={32} />,
-      title: 'Consultoria Estratégica',
-      description: 'Análise 360° do seu perfil para traçar o roteiro mais eficiente até a sua conquista.',
-    },
-  ];
-
   return (
-    <section id="serviços" className="relative overflow-hidden bg-white/5 py-32">
-      {/* Background Decoration */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary/5 blur-[150px] -z-10" />
-
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-end justify-between mb-20 gap-8">
-          <div className="max-w-2xl">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-3 mb-4"
-            >
-              <span className="w-12 h-px bg-secondary" />
-              <span className="text-secondary text-sm font-bold tracking-[0.3em] uppercase">Soluções</span>
-            </motion.div>
-            <h2 className="text-4xl lg:text-6xl font-heading font-bold text-white">
-              Consultoria Especializada em <span className="text-gradient-gold">Resultados</span>.
-            </h2>
-          </div>
-          <p className="text-white/40 lg:max-w-xs text-sm uppercase tracking-widest leading-loose">
-            Atuamos com precisão técnica e olhar estratégico para garantir o melhor negócio.
+    <section id="services" className="section-padding bg-brand-charcoal">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-cinzel font-bold text-white mb-4"
+          >
+            SOLUÇÕES <span className="text-gradient-gold">MONIFY</span>
+          </motion.h2>
+          <div className="h-1 w-24 bg-brand-gold mx-auto mb-6"></div>
+          <p className="text-white/60 max-w-2xl mx-auto font-inter text-lg">
+            Combinamos conhecimento técnico e relacionamento bancário para garantir o melhor resultado financeiro.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-secondary/20 transition-all duration-700"
+              transition={{ delay: s.delay }}
+              className="glass-card p-8 rounded-xl flex flex-col items-center text-center group"
             >
-              {/* Icon Container */}
-              <div className="w-16 h-16 rounded-2xl bg-white/[0.03] flex items-center justify-center text-secondary border border-white/5 mb-8 transition-all duration-700 group-hover:scale-110 group-hover:bg-secondary group-hover:text-primary">
-                {service.icon}
+              <div className="mb-6 p-4 bg-white/5 rounded-full group-hover:bg-brand-gold/10 transition-colors">
+                {s.icon}
               </div>
-
-              <h3 className="text-2xl font-heading font-bold text-white mb-4 group-hover:text-secondary transition-colors duration-300">
-                {service.title}
+              <h3 className="text-xl font-outfit font-bold text-white mb-4 group-hover:text-brand-gold transition-colors">
+                {s.title}
               </h3>
-              <p className="text-white/50 text-base leading-relaxed mb-8">
-                {service.description}
+              <p className="text-white/50 leading-relaxed text-sm">
+                {s.desc}
               </p>
-
-              <button className="flex items-center gap-2 text-secondary text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">
-                Saiba Mais <ChevronRight size={16} />
-              </button>
-
-              {/* Hover Glow */}
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700" />
             </motion.div>
           ))}
         </div>

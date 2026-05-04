@@ -1,92 +1,69 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[105svh] flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Image with Parallax-like effect */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/hero-house.png" 
-          alt="Modern Luxury House" 
-          className="w-full h-full object-cover"
-        />
-        {/* Modern Overlay: Gradient for contrast, subtle blur at edges */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent lg:via-primary/40 lg:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60" />
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url("/hero-bg.png")' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-charcoal/80 via-brand-charcoal/40 to-brand-charcoal"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl lg:max-w-6xl">
-          {/* Subtle Accent Label */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-3 mb-6"
-          >
-            <span className="w-12 h-px bg-secondary" />
-            <span className="text-secondary text-sm lg:text-base font-bold tracking-[0.3em] uppercase">Excelência em Patrimônio</span>
-          </motion.div>
-
-          {/* MAIN HEADINGS - "CHAMATIVOS" */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-tight mb-8 tracking-tighter"
-          >
-            TRANSFORME SEU <br /> 
-            <span className="text-gradient-gold">FUTURO</span> EM REALIDADE.
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-white/60 text-lg lg:text-2xl max-w-2xl lg:max-w-3xl mb-12 font-medium leading-relaxed"
-          >
-            Assessoria financeira e imobiliária estratégica para quem exige o extraordinário. 
-            Segurança, rentabilidade e confiança em cada transação.
-          </motion.p>
-
-          {/* CTA Group removed as per request */}
-
-          {/* Trust Badges / Stats Overlay Hook */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 1 }}
-            className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 border-t border-white/5 pt-12"
-          >
-            <div className="flex items-center gap-4">
-              <ShieldCheck className="text-secondary" size={24} />
-              <div>
-                <p className="text-white font-bold text-xl leading-none">+500</p>
-                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Famílias Atendidas</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <TrendingUp className="text-secondary" size={24} />
-              <div>
-                <p className="text-white font-bold text-xl leading-none">R$ 200M+</p>
-                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Crédito Aprovado</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Handshake className="text-secondary" size={24} />
-              <div>
-                <p className="text-white font-bold text-xl leading-none">98%</p>
-                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Taxa de Sucesso</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <span className="text-brand-gold font-outfit font-semibold tracking-[0.3em] uppercase text-sm mb-4 block">
+            Assessoria Imobiliária & Financeira
+          </span>
+          <h1 className="text-5xl md:text-8xl font-cinzel font-black text-white mb-6 leading-tight">
+            ESTRATÉGIA PARA <br />
+            <span className="text-gradient-gold">CONQUISTAR</span> SEU IMÓVEL
+          </h1>
+          <p className="text-lg md:text-xl text-white/70 font-inter max-w-2xl mx-auto mb-10 leading-relaxed">
+            Mais que crédito, entregamos soluções inteligentes para viabilizar o seu patrimônio com as melhores taxas do mercado.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://wa.me/5514988414686"
+              className="btn-premium px-10 py-5 text-lg w-full sm:w-auto text-center"
+            >
+              FALAR COM ESPECIALISTA
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#services"
+              className="bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold px-10 py-5 text-lg rounded-[4px] hover:bg-white/10 transition-all w-full sm:w-auto text-center"
+            >
+              VER SERVIÇOS
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Modern Decoration */}
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-secondary/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* Scroll Down Indicator */}
+      <motion.div 
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-brand-gold/50 cursor-pointer"
+        onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
+      >
+        <ChevronDown size={40} />
+      </motion.div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 -left-20 w-64 h-64 bg-brand-gold/10 rounded-full blur-[100px]"></div>
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-brand-gold/5 rounded-full blur-[120px]"></div>
     </section>
   );
 };
