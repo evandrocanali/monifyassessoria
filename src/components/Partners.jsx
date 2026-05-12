@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 const banks = [
   {
     name: 'Bradesco',
-    logo: 'https://raw.githubusercontent.com/filipeceschin/brazilian-banks/master/logos/bradesco.png',
+    logo: 'https://images.weserv.nl/?url=https://raw.githubusercontent.com/filipeceschin/brazilian-banks/main/logos/bradesco.png',
   },
   {
     name: 'Santander',
-    logo: 'https://raw.githubusercontent.com/filipeceschin/brazilian-banks/master/logos/santander.png',
+    logo: 'https://images.weserv.nl/?url=https://raw.githubusercontent.com/filipeceschin/brazilian-banks/main/logos/santander.png',
   },
   {
     name: 'Itaú',
-    logo: 'https://raw.githubusercontent.com/filipeceschin/brazilian-banks/master/logos/itau.png',
+    logo: 'https://images.weserv.nl/?url=https://raw.githubusercontent.com/filipeceschin/brazilian-banks/main/logos/itau.png',
   },
   {
     name: 'Inter',
-    logo: 'https://raw.githubusercontent.com/filipeceschin/brazilian-banks/master/logos/inter.png',
+    logo: 'https://images.weserv.nl/?url=https://raw.githubusercontent.com/filipeceschin/brazilian-banks/main/logos/inter.png',
   },
 ];
 
