@@ -103,8 +103,8 @@ const Footer = () => {
     <footer className="py-12 bg-brand-charcoal border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <div className="flex items-center justify-center mb-8">
-          <img src="/logo-premium.png" alt="Monify Logo" className="h-8 w-auto mr-3 grayscale" />
-          <span className="text-xl font-cinzel font-bold text-white/50 tracking-widest uppercase">MONIFY</span>
+          <img src="/logo-premium.png" alt="Monify Logo" className="h-10 w-auto mr-4 grayscale" />
+          <span className="text-2xl font-cinzel font-bold text-white/50 tracking-widest uppercase">MONIFY</span>
         </div>
         <p className="text-white/20 text-sm font-inter">
           &copy; {new Date().getFullYear()} Monify Assessoria Financeira & Imobiliária. Todos os direitos reservados.
