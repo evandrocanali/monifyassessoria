@@ -12,8 +12,12 @@ import { LanguageProvider } from './LanguageContext';
 function App() {
   return (
     <LanguageProvider>
-      <div className="bg-brand-charcoal min-h-screen text-white flex items-center justify-center">
-        <h1 className="text-4xl font-bold">LanguageProvider - Test Render</h1>
+      <div className="bg-brand-charcoal min-h-screen text-white font-inter">
+        <Navbar />
+        <Hero />
+        <div className="bg-red-500 p-20 text-center">
+          <h1 className="text-4xl font-bold text-white">Navbar & Hero Loaded</h1>
+        </div>
       </div>
     </LanguageProvider>
   );
