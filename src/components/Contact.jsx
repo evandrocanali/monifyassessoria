@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageSquare } from 'lucide-react';
 
 const InstagramIcon = ({ size = 24 }) => (
   <svg

@@ -1,7 +1,24 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Globe } from 'lucide-react';
+
+const GlobeIcon = ({ size = 14, className = "" }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
 
 const languages = [
   { code: 'pt', name: 'Português', flag: '🇧🇷' },
@@ -25,7 +42,7 @@ const LanguageSelector = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-white/70 hover:text-white"
       >
-        <Globe size={14} className="text-brand-gold" />
+        <GlobeIcon size={14} className="text-brand-gold" />
         <span className="text-xs font-bold uppercase tracking-wider">{currentLang.code}</span>
       </button>
 
