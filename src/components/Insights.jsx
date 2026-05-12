@@ -6,21 +6,21 @@ const news = [
   {
     title: 'Modernização em SP: O Novo Sistema de Licenciamento',
     category: 'Mercado Imobiliário',
-    date: 'Maio 2024',
+    date: 'Maio 2026',
     icon: <FileCheck className="text-brand-gold" size={24} />,
     desc: 'Como as novas mudanças no SIURB impactam a agilidade dos novos empreendimentos em São Paulo.'
   },
   {
-    title: 'Expansão do Crédito Imobiliário em 2024',
+    title: 'Expansão do Crédito Imobiliário em 2026',
     category: 'Economia',
-    date: 'Abril 2024',
+    date: 'Abril 2026',
     icon: <TrendingUp className="text-brand-gold" size={24} />,
     desc: 'Bancos sinalizam maior abertura para financiamentos de médio e alto padrão este ano.'
   },
   {
     title: 'Taxas Selic e o Impacto nos Financiamentos',
     category: 'Financeiro',
-    date: 'Março 2024',
+    date: 'Março 2026',
     icon: <Landmark className="text-brand-gold" size={24} />,
     desc: 'O que esperar das próximas reuniões do Copom e como garantir as melhores taxas hoje.'
   }

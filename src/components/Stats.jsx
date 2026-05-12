@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const stats = [
   { label: 'MILHÕES FINANCIADOS', value: '150+' },
   { label: 'FAMÍLIAS ATENDIDAS', value: '800+' },
-  { label: 'BANCOS PARCEIROS', value: '12' },
+  { label: 'BANCOS PARCEIROS', value: '4' },
   { label: 'ANOS DE MERCADO', value: '16' }
 ];
 

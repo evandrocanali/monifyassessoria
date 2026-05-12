@@ -15,12 +15,7 @@ const services = [
     icon: <RefreshCw className="w-10 h-10 text-brand-gold" />,
     delay: 0.2
   },
-  {
-    title: 'Consórcio Estratégico',
-    desc: 'A forma mais inteligente de planejar seu patrimônio sem pagar juros bancários abusivos.',
-    icon: <Layers className="w-10 h-10 text-brand-gold" />,
-    delay: 0.3
-  },
+
   {
     title: 'Crédito Estruturado',
     desc: 'Soluções sob medida para perfis de alta renda e investimentos de grande porte.',
@@ -48,7 +43,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s, i) => (
             <motion.div
               key={i}
