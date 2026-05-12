@@ -5,13 +5,13 @@ import { Home, RefreshCw, Layers, ShieldCheck } from 'lucide-react';
 const services = [
   {
     title: 'Financiamento Imobiliário',
-    desc: 'Assessoria completa na escolha do banco, análise de taxas e aprovação rápida para o seu novo imóvel.',
+    desc: 'As melhores condições para você conquistar o seu imóvel.',
     icon: <Home className="w-10 h-10 text-brand-gold" />,
     delay: 0.1
   },
   {
     title: 'Refinanciamento (Home Equity)',
-    desc: 'Transforme o seu imóvel em capital de giro com as menores taxas do mercado e prazos estendidos.',
+    desc: 'Use o valor do seu imóvel para realizar projetos, investir ou quitar dívidas com mais economia.',
     icon: <RefreshCw className="w-10 h-10 text-brand-gold" />,
     delay: 0.2
   },

@@ -23,11 +23,11 @@ const Hero = () => {
             Assessoria Imobiliária & Financeira
           </span>
           <h1 className="text-5xl md:text-8xl font-cinzel font-black text-white mb-6 leading-tight">
-            ESTRATÉGIA PARA <br />
-            <span className="text-gradient-gold">CONQUISTAR</span> SEU IMÓVEL
+            SEU SONHO, <br />
+            NOSSA <span className="text-gradient-gold">ESTRATÉGIA.</span>
           </h1>
           <p className="text-lg md:text-xl text-white/70 font-inter max-w-2xl mx-auto mb-10 leading-relaxed">
-            Mais que crédito, entregamos soluções inteligentes para viabilizar o seu patrimônio com as melhores taxas do mercado.
+            Assessoria financeira especializada em soluções de crédito que transformam planos em conquistas.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

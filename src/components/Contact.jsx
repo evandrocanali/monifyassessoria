@@ -109,7 +109,8 @@ const Footer = () => {
         <p className="text-white/20 text-sm font-inter">
           &copy; {new Date().getFullYear()} Monify Assessoria Financeira & Imobiliária. Todos os direitos reservados.
           <br />
-          <span className="text-[10px] mt-2 block">Premium Financial Advisory Service</span>
+          <span className="text-[10px] mt-2 block uppercase tracking-[0.2em] text-brand-gold font-bold">ESTRATÉGIA QUE GERA CONQUISTAS.</span>
+          <span className="text-[10px] mt-1 block">Premium Financial Advisory Service</span>
         </p>
       </div>
     </footer>

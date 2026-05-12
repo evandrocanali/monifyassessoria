@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { Target, ShieldCheck, TrendingUp } from 'lucide-react';
 
 const About = () => {
   return (
@@ -44,12 +44,12 @@ const About = () => {
 
             <div className="space-y-6">
               {[
-                { title: 'Relacionamento Bancário', desc: 'Acesso direto aos principais tomadores de decisão nos bancos.' },
-                { title: 'Burocracia Zero', desc: 'Cuidamos de toda a documentação, do protocolo à escritura.' },
-                { title: 'Taxas Exclusivas', desc: 'Negociamos condições que não estão disponíveis no balcão das agências.' }
+                { title: 'Foco em Você', desc: 'Soluções personalizadas para seus objetivos.', icon: <Target className="text-brand-gold shrink-0 mt-1" size={24} /> },
+                { title: 'Segurança', desc: 'Processos seguros, transparentes e sem burocracia.', icon: <ShieldCheck className="text-brand-gold shrink-0 mt-1" size={24} /> },
+                { title: 'Resultados', desc: 'Estratégia inteligente para decisões que geram realização.', icon: <TrendingUp className="text-brand-gold shrink-0 mt-1" size={24} /> }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
-                  <CheckCircle2 className="text-brand-gold shrink-0 mt-1" size={24} />
+                  {item.icon}
                   <div>
                     <h4 className="text-white font-outfit font-bold text-lg mb-1">{item.title}</h4>
                     <p className="text-white/40 text-sm">{item.desc}</p>
