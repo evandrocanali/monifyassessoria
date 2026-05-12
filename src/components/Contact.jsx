@@ -20,101 +20,117 @@ const InstagramIcon = ({ size = 24 }) => (
   </svg>
 );
 
-const Contact = () => {
+import { useLanguage } from '../LanguageContext';
+
+export const Contact = () => {
+  const { t } = useLanguage();
+
   return (
-    <section id="contact" className="section-padding bg-brand-charcoal relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-brand-gray rounded-3xl overflow-hidden border border-white/5">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* Contact Info */}
-            <div className="p-12 lg:p-20 bg-gradient-to-br from-brand-charcoal to-brand-gray">
-              <h2 className="text-4xl font-cinzel font-bold text-white mb-8">VAMOS <span className="text-gradient-gold">CONVERSAR?</span></h2>
-              <p className="text-white/50 mb-12 text-lg">Sua próxima grande conquista começa com uma decisão estratégica. Estamos prontos para te guiar.</p>
-              
-              <div className="space-y-8">
-                <div className="flex items-center gap-6 group">
-                  <div className="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center group-hover:bg-brand-gold transition-colors">
-                    <Phone className="text-brand-gold group-hover:text-black transition-colors" size={20} />
-                  </div>
-                  <div>
-                    <p className="text-white/30 text-xs uppercase tracking-widest font-bold">Telefone / WhatsApp</p>
-                    <p className="text-white font-outfit font-bold text-xl">(14) 98841-4686</p>
-                  </div>
-                </div>
+    <section id="contato" className="py-24 bg-brand-charcoal relative">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-8 uppercase leading-tight">
+              {t('contact.title')}<br />
+              <span className="text-brand-gold">{t('contact.subtitle')}</span>
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed mb-12 max-w-md">
+              {t('contact.desc')}
+            </p>
 
-                <div className="flex items-center gap-6 group">
-                  <div className="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center group-hover:bg-brand-gold transition-colors">
-                    <Mail className="text-brand-gold group-hover:text-black transition-colors" size={20} />
-                  </div>
-                  <div>
-                    <p className="text-white/30 text-xs uppercase tracking-widest font-bold">Email</p>
-                    <p className="text-white font-outfit font-bold text-xl">monifyassessoria@hotmail.com</p>
-                  </div>
+            <div className="space-y-8">
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10">
+                  <Phone size={20} className="text-brand-gold" />
                 </div>
-
-                <div className="flex items-center gap-6 group">
-                  <div className="w-12 h-12 rounded-full bg-brand-gold/10 flex items-center justify-center group-hover:bg-brand-gold transition-colors">
-                    <MapPin className="text-brand-gold group-hover:text-black transition-colors" size={20} />
-                  </div>
-                  <div>
-                    <p className="text-white/30 text-xs uppercase tracking-widest font-bold">Escritório</p>
-                    <p className="text-white font-outfit font-bold text-lg">Bauru, SP</p>
-                  </div>
+                <div>
+                  <p className="text-white/40 text-xs uppercase font-bold tracking-widest mb-1">{t('contact.phone')}</p>
+                  <p className="text-white font-bold">(14) 98841-4686</p>
                 </div>
               </div>
 
-              <div className="mt-16 pt-16 border-t border-white/5 flex gap-6">
-                <a href="https://www.instagram.com/monify.assessoria/" target="_blank" rel="noreferrer" className="text-white/30 hover:text-brand-gold transition-colors">
-                  <InstagramIcon size={28} />
-                </a>
-                <a href="#" className="text-white/30 hover:text-brand-gold transition-colors">
-                  <MessageCircle size={28} />
-                </a>
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10">
+                  <Mail size={20} className="text-brand-gold" />
+                </div>
+                <div>
+                  <p className="text-white/40 text-xs uppercase font-bold tracking-widest mb-1">{t('contact.email')}</p>
+                  <p className="text-white font-bold">monifyassessoria@hotmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10">
+                  <MapPin size={20} className="text-brand-gold" />
+                </div>
+                <div>
+                  <p className="text-white/40 text-xs uppercase font-bold tracking-widest mb-1">{t('contact.office')}</p>
+                  <p className="text-white font-bold">Bauru/SP - Brasil</p>
+                </div>
               </div>
             </div>
+          </motion.div>
 
-            {/* CTA Box */}
-            <div className="p-12 lg:p-20 flex flex-col justify-center items-center text-center">
-              <div className="mb-10 text-brand-gold">
-                <MessageCircle size={80} strokeWidth={1} />
-              </div>
-              <h3 className="text-3xl font-cinzel font-bold text-white mb-6">SIMULAÇÃO IMEDIATA</h3>
-              <p className="text-white/50 mb-10 max-w-sm">Receba uma análise preliminar de crédito em poucos minutos via WhatsApp.</p>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://wa.me/5514988414686"
-                className="btn-premium px-16 py-6 text-xl rounded-full shadow-[0_0_30px_rgba(212,175,55,0.2)]"
-              >
-                INICIAR SIMULAÇÃO
-              </motion.a>
-              <p className="mt-6 text-xs text-white/20 uppercase tracking-widest font-bold font-inter">Atendimento humano e especializado</p>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            
+            <h3 className="text-2xl font-black text-white mb-4 uppercase">{t('contact.simulation')}</h3>
+            <p className="text-white/60 mb-8 leading-relaxed">
+              {t('contact.simulation_desc')}
+            </p>
+
+            <a 
+              href="https://wa.me/5514988414686"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 w-full py-5 bg-brand-gold text-brand-charcoal font-black rounded-2xl hover:bg-white transition-all duration-300 shadow-xl shadow-brand-gold/20 uppercase tracking-widest"
+            >
+              <MessageSquare size={20} />
+              {t('contact.btn')}
+            </a>
+            
+            <p className="mt-6 text-center text-white/30 text-xs font-bold uppercase tracking-widest">
+              {t('contact.human')}
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
   );
 };
 
-const Footer = () => {
+export const Footer = () => {
+  const { t } = useLanguage();
+
   return (
-    <footer className="py-12 bg-brand-charcoal border-t border-white/5">
+    <footer className="py-12 border-t border-white/5 bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <div className="flex items-center justify-center mb-8">
-          <img src="/logo-premium.png" alt="Monify Logo" className="h-10 w-auto mr-4 grayscale" />
-          <span className="text-2xl font-cinzel font-bold text-white/50 tracking-widest uppercase">MONIFY</span>
+        <div className="flex items-center justify-center gap-2 mb-8">
+          <div className="w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center">
+            <span className="text-brand-charcoal font-black text-xl italic leading-none">M</span>
+          </div>
+          <span className="text-2xl font-black text-white italic tracking-tighter uppercase">MONIFY</span>
         </div>
+        
         <p className="text-white/20 text-sm font-inter">
-          &copy; {new Date().getFullYear()} Monify Assessoria Financeira & Imobiliária. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} Monify Assessoria Financeira & Imobiliária. {t('footer.rights')}
           <br />
-          <span className="text-[10px] mt-2 block uppercase tracking-[0.2em] text-brand-gold font-bold">ESTRATÉGIA QUE GERA CONQUISTAS.</span>
-          <span className="text-[10px] mt-1 block">Premium Financial Advisory Service</span>
+          <span className="text-[10px] mt-2 block uppercase tracking-[0.2em] text-brand-gold font-bold">{t('footer.tagline')}</span>
+          <br />
+          <span className="text-[10px] mt-2 block text-white/10">
+            {t('footer.developed')} <a href="http://www.nresolutions.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-brand-gold transition-colors underline decoration-brand-gold/30">NRE Solutions</a>
+          </span>
         </p>
       </div>
     </footer>
   );
 };
-
-export { Contact, Footer };

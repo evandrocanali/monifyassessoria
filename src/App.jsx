@@ -7,20 +7,23 @@ import Services from './components/Services';
 import Insights from './components/Insights';
 import About from './components/About';
 import { Contact, Footer } from './components/Contact';
+import { LanguageProvider } from './LanguageContext';
 
 function App() {
   return (
-    <div className="bg-brand-charcoal min-h-screen selection:bg-brand-gold selection:text-black">
-      <Navbar />
-      <Hero />
-      <Stats />
-      <Partners />
-      <Services />
-      <About />
-      <Insights />
-      <Contact />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="bg-brand-charcoal min-h-screen text-white font-inter selection:bg-brand-gold selection:text-brand-charcoal">
+        <Navbar />
+        <Hero />
+        <Stats />
+        <Partners />
+        <Services />
+        <About />
+        <Insights />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

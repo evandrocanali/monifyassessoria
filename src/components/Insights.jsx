@@ -1,49 +1,73 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, TrendingUp, Landmark, FileCheck } from 'lucide-react';
-
-const news = [
-  {
-    title: 'Modernização em SP: O Novo Sistema de Licenciamento',
-    category: 'Mercado Imobiliário',
-    date: 'Maio 2026',
-    icon: <FileCheck className="text-brand-gold" size={24} />,
-    desc: 'Como as novas mudanças no SIURB impactam a agilidade dos novos empreendimentos em São Paulo.'
-  },
-  {
-    title: 'Expansão do Crédito Imobiliário em 2026',
-    category: 'Economia',
-    date: 'Abril 2026',
-    icon: <TrendingUp className="text-brand-gold" size={24} />,
-    desc: 'Bancos sinalizam maior abertura para financiamentos de médio e alto padrão este ano.'
-  },
-  {
-    title: 'Taxas Selic e o Impacto nos Financiamentos',
-    category: 'Financeiro',
-    date: 'Março 2026',
-    icon: <Landmark className="text-brand-gold" size={24} />,
-    desc: 'O que esperar das próximas reuniões do Copom e como garantir as melhores taxas hoje.'
-  }
-];
+import { ExternalLink } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
 
 const Insights = () => {
+  const { t } = useLanguage();
+
+  const news = [
+    {
+      title: t('insights.item1.title'),
+      category: t('insights.item1.category'),
+      date: '12 MAI 2026',
+      desc: t('insights.item1.desc'),
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      title: t('insights.item2.title'),
+      category: t('insights.item2.category'),
+      date: '10 MAI 2026',
+      desc: t('insights.item2.desc'),
+      image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      title: t('insights.item3.title'),
+      category: t('insights.item3.category'),
+      date: '08 MAI 2026',
+      desc: t('insights.item3.desc'),
+      image: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    },
+  ];
+
   return (
-    <section id="insights" className="section-padding bg-brand-gray/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-          <div className="mb-6 md:mb-0">
-            <h2 className="text-4xl font-cinzel font-bold text-white mb-2">INSIGHTS DO <span className="text-gradient-gold">MERCADO</span></h2>
-            <p className="text-white/50 font-inter">Informação estratégica para suas decisões patrimoniais.</p>
-          </div>
-          <a href="https://www.instagram.com/monify.assessoria/" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-brand-gold hover:text-white transition-colors font-bold uppercase tracking-widest text-sm">
-            VER MAIS NO INSTAGRAM <ArrowRight size={18} />
-          </a>
+    <section id="insights" className="py-24 bg-[#0A0A0A]">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">
+              {t('insights.title')} <span className="text-brand-gold">{t('insights.subtitle')}</span>
+            </h2>
+            <p className="text-white/60 text-lg max-w-xl">
+              {t('insights.desc')}
+            </p>
+          </motion.div>
+          <motion.a
+            href="https://www.instagram.com/monifyassessoria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 text-brand-gold font-bold hover:text-white transition-colors group"
+          >
+            {t('insights.more')}
+            <ExternalLink size={18} className="group-hover:translate-x-1 transition-transform" />
+          </motion.a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {news.map((item, i) => (
             <motion.div
               key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
               whileHover={{ y: -10 }}
               className="bg-brand-charcoal border border-white/5 rounded-2xl overflow-hidden group"
             >

@@ -1,14 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const stats = [
-  { label: 'MILHÕES FINANCIADOS', value: '150+' },
-  { label: 'FAMÍLIAS ATENDIDAS', value: '800+' },
-  { label: 'BANCOS PARCEIROS', value: '4' },
-  { label: 'ANOS DE MERCADO', value: '16' }
-];
+import { useLanguage } from '../LanguageContext';
 
 const Stats = () => {
+  const { t } = useLanguage();
+
+  const stats = [
+    { label: t('stats.millions'), value: '150+', prefix: 'R$' },
+    { label: t('stats.families'), value: '800+' },
+    { label: t('stats.banks'), value: '4' },
+    { label: t('stats.years'), value: '16' }
+  ];
+
   return (
     <section className="bg-brand-charcoal py-20 border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4">

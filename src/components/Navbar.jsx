@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '../LanguageContext';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,11 +18,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Início', href: '#home' },
-    { name: 'Serviços', href: '#services' },
-    { name: 'Insights', href: '#insights' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Contato', href: '#contact' },
+    { name: t('nav.home'), href: '#inicio' },
+    { name: t('nav.services'), href: '#servicos' },
+    { name: t('nav.insights'), href: '#insights' },
+    { name: t('nav.about'), href: '#sobre' },
+    { name: t('nav.contact'), href: '#contato' },
   ];
 
   return (
@@ -32,8 +35,8 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -43,13 +46,14 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <a
-                href="https://wa.me/5514988414686"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-premium text-xs"
+            </div>
+            <div className="hidden lg:flex items-center space-x-6">
+              <LanguageSelector />
+              <a 
+                href="#contato"
+                className="px-6 py-2.5 bg-brand-gold text-brand-charcoal font-bold rounded-full hover:bg-white transition-all duration-300 text-sm shadow-lg shadow-brand-gold/20"
               >
-                SIMULAR AGORA
+                {t('nav.simulate')}
               </a>
             </div>
           </div>
@@ -86,12 +90,6 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="py-4">
-                <a
-                  href="https://wa.me/5514988414686"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-premium inline-block w-full max-w-xs"
                 >
                   SIMULAR AGORA
                 </a>
