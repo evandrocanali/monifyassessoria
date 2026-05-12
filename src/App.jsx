@@ -18,10 +18,9 @@ function App() {
         <Stats />
         <Partners />
         <Services />
-        <About />
-        <Insights />
-        <Contact />
-        <Footer />
+        <div className="bg-blue-500 p-20 text-center">
+          <h1 className="text-4xl font-bold text-white">Stats, Partners & Services Loaded</h1>
+        </div>
       </div>
     </LanguageProvider>
   );
