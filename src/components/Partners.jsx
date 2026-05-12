@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 const banks = [
   {
     name: 'Bradesco',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Bradesco_logo.svg/1024px-Bradesco_logo.svg.png',
+    logo: 'https://logo.clearbit.com/bradesco.com.br',
   },
   {
     name: 'Santander',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Santander_Logo.svg/1024px-Santander_Logo.svg.png',
+    logo: 'https://logo.clearbit.com/santander.com.br',
   },
   {
     name: 'Itaú',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Logo_Ita%C3%BA.svg/1024px-Logo_Ita%C3%BA.svg.png',
+    logo: 'https://logo.clearbit.com/itau.com.br',
   },
   {
     name: 'Inter',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Banco_Inter_logo.svg/1024px-Banco_Inter_logo.svg.png',
+    logo: 'https://logo.clearbit.com/bancointer.com.br',
   },
 ];
 
