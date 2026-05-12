@@ -11,9 +11,11 @@ import { LanguageProvider } from './LanguageContext';
 
 function App() {
   return (
-    <div className="bg-brand-charcoal min-h-screen text-white flex items-center justify-center">
-      <h1 className="text-4xl font-bold">Monify Assessoria - Test Render</h1>
-    </div>
+    <LanguageProvider>
+      <div className="bg-brand-charcoal min-h-screen text-white flex items-center justify-center">
+        <h1 className="text-4xl font-bold">LanguageProvider - Test Render</h1>
+      </div>
+    </LanguageProvider>
   );
 }
 
