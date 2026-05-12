@@ -4,13 +4,23 @@ import { translations } from './translations';
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState(() => {
-    const saved = localStorage.getItem('monify_lang');
-    return saved || 'pt';
-  });
+  const [language, setLanguage] = useState('pt');
 
   useEffect(() => {
-    localStorage.setItem('monify_lang', language);
+    try {
+      const saved = localStorage.getItem('monify_lang');
+      if (saved) setLanguage(saved);
+    } catch (e) {
+      console.warn('LocalStorage access denied:', e);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('monify_lang', language);
+    } catch (e) {
+      // Ignore localStorage errors
+    }
     document.documentElement.lang = language;
   }, [language]);
 

@@ -7,9 +7,9 @@ const About = () => {
   const { t } = useLanguage();
 
   const features = [
-    { title: t('about.features.1.title'), desc: t('about.features.1.desc'), icon: <Target className="text-brand-gold shrink-0 mt-1" size={24} /> },
-    { title: t('about.features.2.title'), desc: t('about.features.2.desc'), icon: <ShieldCheck className="text-brand-gold shrink-0 mt-1" size={24} /> },
-    { title: t('about.features.3.title'), desc: t('about.features.3.desc'), icon: <TrendingUp className="text-brand-gold shrink-0 mt-1" size={24} /> }
+    { title: t('about.pillar1.title'), desc: t('about.pillar1.desc'), icon: <Target className="text-brand-gold shrink-0 mt-1" size={24} /> },
+    { title: t('about.pillar2.title'), desc: t('about.pillar2.desc'), icon: <ShieldCheck className="text-brand-gold shrink-0 mt-1" size={24} /> },
+    { title: t('about.pillar3.title'), desc: t('about.pillar3.desc'), icon: <TrendingUp className="text-brand-gold shrink-0 mt-1" size={24} /> }
   ];
 
   return (
