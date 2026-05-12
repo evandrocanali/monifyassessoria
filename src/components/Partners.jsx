@@ -4,19 +4,19 @@ import { motion } from 'framer-motion';
 const banks = [
   {
     name: 'Bradesco',
-    logo: 'https://logo.clearbit.com/bradesco.com.br',
+    logo: 'https://raw.githubusercontent.com/filipeceschin/brazilian-banks/master/logos/bradesco.png',
   },
   {
     name: 'Santander',
-    logo: 'https://logo.clearbit.com/santander.com.br',
+    logo: 'https://raw.githubusercontent.com/filipeceschin/brazilian-banks/master/logos/santander.png',
   },
   {
     name: 'Itaú',
-    logo: 'https://logo.clearbit.com/itau.com.br',
+    logo: 'https://raw.githubusercontent.com/filipeceschin/brazilian-banks/master/logos/itau.png',
   },
   {
     name: 'Inter',
-    logo: 'https://logo.clearbit.com/bancointer.com.br',
+    logo: 'https://raw.githubusercontent.com/filipeceschin/brazilian-banks/master/logos/inter.png',
   },
 ];
 
@@ -24,7 +24,7 @@ const Partners = () => {
   return (
     <section className="bg-brand-charcoal py-12 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24 opacity-40 hover:opacity-100 transition-opacity duration-700">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24 opacity-60 hover:opacity-100 transition-opacity duration-700">
           {banks.map((bank, i) => (
             <motion.div
               key={bank.name}
