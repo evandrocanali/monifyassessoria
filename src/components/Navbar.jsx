@@ -90,8 +90,14 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
+              <div className="pt-4 flex flex-col gap-4 px-4">
+                <LanguageSelector />
+                <a 
+                  href="#contato"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full py-4 bg-brand-gold text-brand-charcoal font-bold rounded-xl text-center shadow-lg"
                 >
-                  SIMULAR AGORA
+                  {t('nav.simulate')}
                 </a>
               </div>
             </div>
