@@ -90,8 +90,8 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="pt-4 flex flex-col gap-4 px-4">
-                <LanguageSelector />
+              <div className="pt-4 flex flex-col items-center gap-4 px-4 pb-4">
+                <LanguageSelector isMobile={true} />
                 <a 
                   href="#contato"
                   onClick={() => setIsOpen(false)}
