@@ -9,9 +9,25 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background with optimized gradients */}
+      {/* Solid dark background base */}
       <div className="absolute inset-0 bg-[#0A0A0A]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-gold/5 via-transparent to-transparent" />
+
+      {/* House image — right side */}
+      <div
+        className="absolute inset-y-0 right-0 w-full md:w-[60%] lg:w-[55%]"
+        style={{
+          backgroundImage: 'url(/hero-house.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center right',
+        }}
+      >
+        {/* Gradient: dark from left so text stays readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-[#0A0A0A]/10" />
+        {/* Gradient: dark from bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />
+      </div>
+
+      {/* Gold glow accents */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px]" />
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-gold/5 rounded-full blur-[120px]" />
 

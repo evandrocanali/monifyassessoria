@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Building2, TrendingUp, BarChart3 } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 
 const Insights = () => {
@@ -12,21 +12,21 @@ const Insights = () => {
       category: t('insights.item1.category'),
       date: '12 MAI 2026',
       desc: t('insights.item1.desc'),
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      icon: <Building2 size={28} className="text-brand-gold" />,
     },
     {
       title: t('insights.item2.title'),
       category: t('insights.item2.category'),
       date: '10 MAI 2026',
       desc: t('insights.item2.desc'),
-      image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      icon: <TrendingUp size={28} className="text-brand-gold" />,
     },
     {
       title: t('insights.item3.title'),
       category: t('insights.item3.category'),
       date: '08 MAI 2026',
       desc: t('insights.item3.desc'),
-      image: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      icon: <BarChart3 size={28} className="text-brand-gold" />,
     },
   ];
 

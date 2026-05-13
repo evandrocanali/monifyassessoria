@@ -49,17 +49,17 @@ const Services = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: s.delay }}
+              transition={{ delay: i * 0.1 }}
               className="glass-card p-8 rounded-xl flex flex-col items-center text-center group"
             >
               <div className="mb-6 p-4 bg-white/5 rounded-full group-hover:bg-brand-gold/10 transition-colors">
-                {s.icon}
+                <s.icon size={32} className="text-brand-gold" />
               </div>
               <h3 className="text-xl font-outfit font-bold text-white mb-4 group-hover:text-brand-gold transition-colors">
                 {s.title}
               </h3>
               <p className="text-white/50 leading-relaxed text-sm">
-                {s.desc}
+                {s.description}
               </p>
             </motion.div>
           ))}
